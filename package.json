@@ -1,0 +1,27 @@
+{
+  "name": "records-db",
+  "version": "1.0.0",
+  "description": "An app that allows users to upload documents and search a database of uploaded documents.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llcook/records-db.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llcook/records-db/issues"
+  },
+  "homepage": "https://github.com/llcook/records-db#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.12",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.42.0"
+  }
+}
