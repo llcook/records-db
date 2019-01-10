@@ -21,7 +21,8 @@ module.exports = function (sequelize, DataTypes) {
                 "elections/campaigns",
                 "environment",
                 "business",
-                "education"
+                "education",
+                "weather"
             ],
             allowNull: false,
             validate: {
