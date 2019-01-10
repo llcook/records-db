@@ -1,3 +1,4 @@
+
 /* TABLE STYLING */
 
 #tableTitle {
@@ -21,4 +22,22 @@ th {
 select {
     margin-left: 2px;
     margin-right: 2px;
+}
+.container{
+    height: 700px;
+}
+#nav {
+    border: black 1px solid;
+    height: 700px;
+}
+
+#table {
+    border: black 1px solid;
+    height: 530px;
+
+}
+
+#header {
+    border: black 1px solid;
+    height: 150px;
 }
