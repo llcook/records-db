@@ -1,3 +1,28 @@
+
+/* TABLE STYLING */
+
+#tableTitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+  
+#dataTable,
+#dataTable_info,
+.paginate_button,
+#dataTable_length,
+#dataTable_filter > label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+  
+th {
+    text-align: left;
+}
+  
+select {
+    margin-left: 2px;
+    margin-right: 2px;
+}
 .container{
     height: 700px;
 }
