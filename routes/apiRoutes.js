@@ -1,24 +1,25 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all documents
-  app.get("/api/documents", function(req, res) {
-    db.Document.findAll({}).then(function(dbDocuments) {
-      res.json(dbDocuments);
+  // Get all Document
+  app.get("/api/Document", function(req, res) {
+    db.Document.findAll({}).then(function(dbDocument) {
+      console.log(dbDocument,"Records fetched");
+      res.json(dbDocument);
     });
   });
 
   // Create a new document
-  app.post("/api/documents", function(req, res) {
-    db.Document.create(req.body).then(function(dbDocuments) {
-      res.json(dbDocuments);
+  app.post("/api/Document", function(req, res) {
+    db.Document.create(req.body).then(function(dbDocument) {
+      res.json(dbDocument);
     });
   });
 
   // Delete a document by id
-  app.delete("/api/documents/:id", function(req, res) {
-    db.Document.destroy({ where: { id: req.params.id } }).then(function(dbDocuments) {
-      res.json(dbDocuments);
+  app.delete("/api/Document/:id", function(req, res) {
+    db.Document.destroy({ where: { id: req.params.id } }).then(function(dbDocument) {
+      res.json(dbDocument);
     });
   });
 };
