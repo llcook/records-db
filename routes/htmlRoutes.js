@@ -2,13 +2,18 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page with all documents
+  
   app.get("/", function(req, res) {
-    db.Document.findAll({}).then(function(dbDocuments) {
-      res.render("index", {
-        documents: dbDocuments
-      });
-    });
+      res.render("index");
   });
+  
+  // app.get("/", function(req, res) {
+  //   db.Document.findAll({}).then(function(dbDocuments) {
+  //     res.render("index", {
+  //       documents: dbDocuments
+  //     });
+  //   });
+  // });
 
   // Load example page and pass in an example by id
   app.get("/search", function(req, res) {
