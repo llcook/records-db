@@ -1,66 +1,50 @@
 module.exports = function (sequelize, DataTypes) {
-    var Document = sequelize.define("Document", {
-        Title: {
+    var Documents = sequelize.define("Documents", {
+        document_name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1]
+                len: [10,100]
             }
         },
-        Source: {
+        source: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1]
+                len: [10,200]
             }
         },
-        Category: {
+        category: {
             type: DataTypes.TEXT,
-            defaultValue: "Other",
+            defaultValue: [
+                "public safety",
+                "elections/campaigns",
+                "environment",
+                "business",
+                "education",
+                "weather"
+            ],
             allowNull: false,
             validate: {
-                len: [1]
+                len: [10,50]
             }
         },
-        Date: {
+        docdate: {
             type: DataTypes.DATEONLY,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
+            allowNull: false
         },
-        Description: {
+        description: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
-                len: [1]
+                len: [30,500]
             }
         },
-        File: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-
-        },
+        image: {
+            type: DataTypes.BLOB
+        }
 
     });
 
-    return Document;
+    return Documents;
 };
-
-//TODO:
-    // - Validations
-    // - Character limits
-    // - allow nulls?
-
-
-//  -source: (who created the document) (100)
-//   e.g. Department of Public Works, Denver Police Department, etc.
-// -document-name: (100)
-//   e.g. 2016 Audit, Flooding data 1960-2014
-// -description: (limit characters for each — 260)
-// -image: link to Amazon s3 storage location for particular document
-// -createdAt - automatically created
-// -updatedAt - automatically created
