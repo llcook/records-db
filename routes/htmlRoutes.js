@@ -1,29 +1,31 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
+var db = require("../models");
 
-// Dependencies
-// =============================================================
-var path = require("path");
-
-// Routes
-// =============================================================
 module.exports = function(app) {
-
-  // Each of the below routes just handles the HTML page that the user gets sent to.
-
-  // index route loads view.html
+  // Load index page with all documents
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+    db.Document.findAll({}).then(function(dbDocuments) {
+      res.render("index", {
+        documents: dbDocuments
+      });
+    });
   });
 
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
+  // Load example page and pass in an example by id
+  app.get("/search", function(req, res) {
+    db.Document.findOne({ where: { id: req.params.id } }).then(function(dbDocument) {
+      res.render("search", {
+        documents: dbDocuments
+      });
+    });
   });
 
-  // blog route loads blog.html
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+  // Load add page (form: source, title, desc...)
+  app.get("/add", function(req, res) {
+    res.render("add");
   });
 
+  // Render 404 page for any unmatched routes
+  app.get("*", function(req, res) {
+    res.render("404");
+  });
 };
