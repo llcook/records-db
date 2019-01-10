@@ -1,13 +1,36 @@
 <div class="row">
-    <div class="col s12">
-        <div class="btn">
-            <span>UPLOAD</span>
-            <input type="file">
+    <form>
+
+        <div class="input-field col s12">
+            <input placeholder="Document source" id="source" type="text" class="validate">
+            <label for="source">Source</label>
         </div>
-    </div>
-    <div class="col s12">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-            <i class="material-icons right">send</i>
-        </button>
-    </div>
+        <div class="input-field col s12">
+            <input placeholder="Document title" id="title" type="text" class="validate">
+            <label for="title">Title</label>
+        </div>
+        <div class="input-field col s12">
+            <input type="date" id="date" name="doc-date" value="01-01-1999" min="1600-01-01" max="2999-01-01">
+            <label for="date">Start date:</label>
+        </div>
+        <div class="input-field col s12">
+            <input placeholder="Category" id="category" type="text" class="validate">
+            <label for="category">Category</label>
+        </div>
+        <div class="input-field col s12">
+            <input placeholder="Description" id="description" type="text" class="validate">
+            <label for="description">Description</label>
+        </div>
+        <div class="col s12">
+            <div class="btn">
+                <span>UPLOAD</span>
+                <input type="file">
+         </div>
+        </div>
+        <div class="col s12">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
 </div>
