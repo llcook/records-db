@@ -13,6 +13,36 @@
                 <table id="dataTable">
                     <thead>
                         <tr>
+                            <th>Source</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Image</th>                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each documents}}
+                        <tr>
+                            <td>{{this.source}}</td>
+                            <td>{{this.document_name}}</td>
+                            <td>{{this.docdate}}</td>
+                            <td>{{this.category}}</td>
+                            <td>{{this.description}}</td>
+                            <td>{{this.image}}</td>
+                        </tr>
+                        {{/each}}
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    {{!-- <table id="dataTable">
+                    <thead>
+                        <tr>
                             <th>Name</th>
                             <th>Position</th>
                             <th>Office</th>
@@ -479,7 +509,4 @@
                             <td>$112,000</td>
                         </tr>
                     </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+                </table> --}}
