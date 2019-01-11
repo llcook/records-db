@@ -1,5 +1,7 @@
-// ADD DOCUMENT CLICK FUNCTION ////////////////////////////////////////
+// TABLE FUNCTIONALITY (CALLS DATATABLES PLUGIN)
+$("#dataTable").DataTable();
 
+// ADD DOCUMENT CLICK FUNCTION ////////////////////////////////////////
 
 $(".createForm").on("click", function (event) {
   event.preventDefault();
