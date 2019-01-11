@@ -10,10 +10,25 @@ module.exports = function(app) {
   });
 
   // Create a new document
+  // app.post("/api/Document", function(req, res) {
+  //   console.log ("Req body is: " + req.body)
+  //   db.Document.create(req.body).then(function(dbDocument) {
+  //     res.json(dbDocument);
+  //   });
+  // });
+
   app.post("/api/Document", function(req, res) {
-    db.Document.create(req.body).then(function(dbDocument) {
-      res.json(dbDocument);
-    });
+    console.log(req.body);
+    db.Document.create({
+      source: req.body.source,
+      document_name: req.body.title,
+      docdate: req.body.date,
+      category: req.body.category,
+      description: req.body.description
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
   });
 
   // Delete a document by id

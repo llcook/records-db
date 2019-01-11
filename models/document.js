@@ -2,24 +2,21 @@ module.exports = function (sequelize, DataTypes) {
     var Document = sequelize.define("Document", {
         document_name: {
             type: DataTypes.STRING,
+            allowNull: false,
             validate: {
-                allowNull: false,
-                notEmpty: true,
-                len: [10, 100]
+                len: [1,100]
             }
         },
         source: {
             type: DataTypes.STRING,
+            allowNull: false,
             validate: {
-                allowNull: false,
-                notEmpty: true,
-                len: [10, 200],
-                isURL: true
+                len: [1,200]
             }
         },
         category: {
-            type: DataTypes.STRING,
-            values: [
+            type: DataTypes.TEXT,
+            defaultValue: [
                 "public safety",
                 "elections/campaigns",
                 "environment",
@@ -27,26 +24,23 @@ module.exports = function (sequelize, DataTypes) {
                 "education",
                 "weather"
             ],
+            allowNull: false,
             validate: {
-                allowNull: false,
-                notEmpty: true,
-                len: [10, 50],
-                isLowercase: true
+                len: [1,50]
             }
         },
         docdate: {
-            type: DataTypes.DATEONLY,
+            type: DataTypes.STRING,
+            allowNull: false,
             validate: {
-                allowNull: false,
-                notEmpty: true,
-                isDate: true
+                len: [1,30]}
             }
         },
         description: {
             type: DataTypes.TEXT,
+            allowNull: false,
             validate: {
-                allowNull: false,
-                notEmpty: true
+                len: [1,500]
             }
         },
         image: {
