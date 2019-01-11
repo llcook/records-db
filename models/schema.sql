@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS records_db;
 -- Creates the "db" database --
 CREATE DATABASE records_db;
 USE records_db;
-CREATE TABLE document
+CREATE TABLE documents
 (
     id INTEGER NOT NULL AUTO_INCREMENT,
     source VARCHAR(100),

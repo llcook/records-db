@@ -14,11 +14,11 @@
 
 
 
-INSERT INTO document (source,document_name, docdate, category , description, image, createdAt, updatedAt) 
+INSERT INTO documents (source,document_name, docdate, category , description, image, createdAt, updatedAt) 
 VALUES ('file:///F:/test-folder/table-sort.3/index.html#', 'test01', CURRENT_TIMESTAMP, 'politics', 'test document data1', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO document (source,document_name, docdate, category , description, image, createdAt, updatedAt)
+INSERT INTO documents (source,document_name, docdate, category , description, image, createdAt, updatedAt)
 VALUES ('file:///F:/test-folder/table-sort.3/index.html#', 'test02', CURRENT_TIMESTAMP, 'politics', 'test document data2', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO document (source,document_name, docdate, category , description, image, createdAt, updatedAt)
+INSERT INTO documents (source,document_name, docdate, category , description, image, createdAt, updatedAt)
 VALUES ('file:///F:/test-folder/table-sort.3/index.html#', 'test03', CURRENT_TIMESTAMP, 'personal', 'test document data3', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP); 
-INSERT INTO document (source,document_name, docdate, category , description, image, createdAt, updatedAt)
+INSERT INTO documents (source,document_name, docdate, category , description, image, createdAt, updatedAt)
 VALUES ('file:///F:/test-folder/table-sort.3/index.html#', 'test04', CURRENT_TIMESTAMP, 'personal', 'test document data4', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
