@@ -4,14 +4,14 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [10,100]
+                len: [1,100]
             }
         },
         source: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [10,200]
+                len: [1,200]
             }
         },
         category: {
@@ -26,18 +26,20 @@ module.exports = function (sequelize, DataTypes) {
             ],
             allowNull: false,
             validate: {
-                len: [10,50]
+                len: [1,50]
             }
         },
         docdate: {
-            type: DataTypes.DATEONLY,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1,30]}
         },
         description: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
-                len: [30,500]
+                len: [1,500]
             }
         },
         image: {

@@ -8,7 +8,7 @@ CREATE TABLE document
     id INTEGER NOT NULL AUTO_INCREMENT,
     source VARCHAR(100),
     document_name VARCHAR(100),
-    docdate DATETIME,
+    docdate VARCHAR(30),
     category VARCHAR(100),
     description VARCHAR(300),
     image BLOB,
