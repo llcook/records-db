@@ -13,27 +13,39 @@
             <input type="date" id="date" name="doc-date" value="01-01-1999" min="1600-01-01" max="2999-01-01">
             <label for="date">Date file was created:</label>
         </div>
-        <div class="input-field col s12">
+        {{!-- <div class="input-field col s12">
             <input placeholder="Category" id="category" type="text" class="validate">
             <label for="category">Category</label>
-        </div>
+        </div> --}}
+
         <div class="input-field col s12">
             <input placeholder="Description" id="description" type="text" class="validate">
             <label for="description">Description</label>
         </div>
 
-        {{!-- <div class="col s12">
-            <div class="btn">
-                <span>UPLOAD</span>
-                <input type="file">
-         </div> --}}
-         
-        </div>
-        <div class="col s12">
-            <button class="formSubmit btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
+
+        <div class="input-field col s12">
+            <select multiple>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Arts</option>
+                <option value="2">Health</option>
+                <option value="3">Infrastructure</option>
+                <option value="4">Labor</option>
+                <option value="5">Legislature</option>
+                <option value="6">Science</option>
+                <option value="7">Sports</option>
+
+            </select>
+            <label>Materialize Multiple Select</label>
         </div>
 
-    </form>
+
+</div>
+<div class="col s12">
+    <button class="formSubmit btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+    </button>
+</div>
+
+</form>
 </div>
