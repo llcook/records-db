@@ -11,9 +11,6 @@
 --     updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 --     PRIMARY KEY (id)
 
-
-
-
 INSERT INTO document (source,document_name, docdate, category , description, image, createdAt, updatedAt) 
 VALUES ('file:///F:/test-folder/table-sort.3/index.html#', 'test01', 1996-01-01, 'politics', 'test document data1', '', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 INSERT INTO document (source,document_name, docdate, category , description, image, createdAt, updatedAt)

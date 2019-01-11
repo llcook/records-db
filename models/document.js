@@ -34,6 +34,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             validate: {
                 len: [1,30]}
+            }
         },
         description: {
             type: DataTypes.TEXT,
