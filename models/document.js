@@ -23,7 +23,10 @@ module.exports = function (sequelize, DataTypes) {
         },
         docdate: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            validate: {
+                len: [1,30]
+            }
         },
         description: {
             type: DataTypes.TEXT,
