@@ -118,7 +118,7 @@ app.post('/upload', function(req, res) {
       // fs.unlink('uploads/' + newFileName);
 
       // Removing directory from server after uploaded to S3
-      // fsextra.removeSync(Uploadfolder);
+      fsextra.removeSync(Uploadfolder);
     });
   });  
 });
