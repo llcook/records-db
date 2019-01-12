@@ -15,26 +15,15 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         category: {
-            type: DataTypes.TEXT,
-            defaultValue: [
-                "public safety",
-                "elections/campaigns",
-                "environment",
-                "business",
-                "education",
-                "weather"
-            ],
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1,50]
             }
         },
         docdate: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1,30]
-            }
+            type: DataTypes.DATEONLY,
+            allowNull: false
         },
         description: {
             type: DataTypes.TEXT,
