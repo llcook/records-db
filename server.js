@@ -3,6 +3,7 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+var router = express.Router();
 
 var app = express();
 var PORT = process.env.PORT || 8080;
@@ -25,7 +26,6 @@ app.use(express.static("views"));
 var path = require('path');
 var fileUpload = require('express-fileupload');
 var s3 = require('s3');
-var keys = require('./keys.js');
 var fs = require('fs');
 var fsextra = require('fs-extra');
 
@@ -38,8 +38,9 @@ var client = s3.createClient({
 	multipartUploadSize: 15728640, // this is the default (15 MB) 
 	s3Options: {
 		// Using the keys from our AWS IAM user
-		accessKeyId: keys.s3accesskey,
-		secretAccessKey: keys.s3secretaccesskey,
+
+		accessKeyId: process.env.S3ACCESSKEY,
+		secretAccessKey: process.env.S3SECRETACCESSKEY,
 		
 		// any other options are passed to new AWS.S3() 
 		// See: http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html#constructor-property 
@@ -77,7 +78,7 @@ app.post('/upload', function(req, res) {
 	var sampleFile = req.files.sampleFile;
 	
 	var newFileName = Date.now() + req.files.sampleFile.name; // creating unique file name based on current time and file name of file uploaded, that way if two people upload the same file name it won't overwrite the existing file
-	
+
 	// Use the mv() method to place the file somewhere on your server (in this case we are placing it to the `uploads` folder with the name that we just created above, newFileName)
 	sampleFile.mv(Uploadfolder + newFileName, function(err) {
 		// If there was an error send that back as the response
@@ -92,7 +93,7 @@ app.post('/upload', function(req, res) {
 			
 			
 			s3Params: {
-				Bucket: keys.s3bucket,
+				Bucket: process.env.S3BUCKET,
 				Key: newFileName, // File path of location on S3
 			},
     };
@@ -117,7 +118,7 @@ app.post('/upload', function(req, res) {
       // fs.unlink('uploads/' + newFileName);
 
       // Removing directory from server after uploaded to S3
-      fsextra.removeSync(Uploadfolder);
+      // fsextra.removeSync(Uploadfolder);
     });
   });  
 });
