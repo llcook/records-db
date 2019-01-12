@@ -16,14 +16,6 @@ module.exports = function (sequelize, DataTypes) {
         },
         category: {
             type: DataTypes.TEXT,
-            defaultValue: [
-                "public safety",
-                "elections/campaigns",
-                "environment",
-                "business",
-                "education",
-                "weather"
-            ],
             allowNull: false,
             validate: {
                 len: [1,50]

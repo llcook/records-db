@@ -1,5 +1,4 @@
 <div class="row">
-    <form>
 
         <div class="input-field col s12">
             <input placeholder="Document source" id="source" type="text" class="validate">
@@ -23,29 +22,18 @@
             <label for="description">Description</label>
         </div>
 
-
         <div class="input-field col s12">
-            <select multiple>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Arts</option>
-                <option value="2">Health</option>
-                <option value="3">Infrastructure</option>
-                <option value="4">Labor</option>
-                <option value="5">Legislature</option>
-                <option value="6">Science</option>
-                <option value="7">Sports</option>
-
-            </select>
-            <label>Category</label>
+            <form ref="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+                <!-- Creating the input field with the name "sampleFile", the "sampleFile" must match the section in your Express.js route, so long as they match you can call it whatever you want -->
+                <input type="file" name="sampleFile" />
+                <!-- Creating submit button to actually submit the form to the backend -->
+                <input type="submit" value="Upload!" />
+            </form>
         </div>
 
-
-</div>
-<div class="col s12">
-    <button class="formSubmit btn waves-effect waves-light" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-    </button>
-</div>
-
-</form>
+        <div class="col s12">
+            <button class="formSubmit btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
 </div>
