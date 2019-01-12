@@ -15,14 +15,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         category: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 len: [1,50]
             }
         },
         docdate: {
-            type: DataTypes.DATEONLY,
+            type: DataTypes.STRING,
             allowNull: false
         },
         description: {
