@@ -23,6 +23,21 @@
         </div>
 
         <div class="input-field col s12">
+          <select multiple>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Arts</option>
+              <option value="2">Health</option>
+              <option value="3">Infrastructure</option>
+              <option value="4">Labor</option>
+              <option value="5">Legislature</option>
+              <option value="6">Science</option>
+              <option value="7">Sports</option>
+
+          </select>
+          <label>Category</label>
+      </div>
+
+        <div class="input-field col s12">
             <form ref="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
                 <!-- Creating the input field with the name "sampleFile", the "sampleFile" must match the section in your Express.js route, so long as they match you can call it whatever you want -->
                 <input type="file" name="sampleFile" />
