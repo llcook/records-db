@@ -38,6 +38,7 @@ var client = s3.createClient({
 	multipartUploadSize: 15728640, // this is the default (15 MB) 
 	s3Options: {
 		// Using the keys from our AWS IAM user
+
 		accessKeyId: process.env.S3ACCESSKEY,
 		secretAccessKey: process.env.S3SECRETACCESSKEY,
 		
@@ -77,7 +78,7 @@ app.post('/upload', function(req, res) {
 	var sampleFile = req.files.sampleFile;
 	
 	var newFileName = Date.now() + req.files.sampleFile.name; // creating unique file name based on current time and file name of file uploaded, that way if two people upload the same file name it won't overwrite the existing file
-	console.log(newFileName);
+
 	// Use the mv() method to place the file somewhere on your server (in this case we are placing it to the `uploads` folder with the name that we just created above, newFileName)
 	sampleFile.mv(Uploadfolder + newFileName, function(err) {
 		// If there was an error send that back as the response
