@@ -64,14 +64,8 @@ select {
 
 }
 
-#header {
-    height: 150px;
-    background-color: #f8f8f6;
-}
-
-
 #header{
-    background-color: #f8f8f6;
+    background-color: #5f5f19;
     box-shadow: none;
     height: 45px;
 }
@@ -80,23 +74,16 @@ select {
     padding-top: 15px
 }
 
-.btn, .btn-small{
+.btn {
     background-color:  #6bbaca;
-}
-
-.btn-small {
-    position: relative;
-    top: 10px;
-    right: 15px;
-    height: 25px;
+    color: white;
 }
 
 .btn:hover,
-.btn-large:hover,
-.btn-small:hover,
 .btn-floating:hover {
     background-color: #435557;
 }
 
-
-
+#createForm {
+    margin-top: 4px;
+}
