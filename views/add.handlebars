@@ -10,85 +10,108 @@
         <div class="input-field col s12">
             <input type="text" name="title" id="title" class="validate" placeholder="Document title">
             <label for="title">Title</label>
-        </div>    
+        </div>
 
         <div class="input-field col s12">
-            <input type="date" name="docdate" id="date" class="validate" placeholder="Date file was created" value="01-01-1999" min="1600-01-01" max="2999-01-01">
+            <input type="date" name="docdate" id="date" class="validate" placeholder="Date file was created" value="01-01-1999"
+                min="1600-01-01" max="2999-01-01">
             <label for="date">Date file was created</label>
         </div>
-
-        <div class="input-field col s12">    
+        {{!--
+        <div class="input-field col s12">
             <input type="text" name="category" id="category" class="validate" placeholder="Category">
             <label for="category">Category</label>
+        </div> --}}
+
+        <div class="input-field col s12">
+
+            <select multiple name="category">
+              
+                <option value="arts">arts</option>
+                <option value="business">business</option>
+                <option value="education">education</option>
+                <option value="elections/campaigns">elections/campaigns</option>
+                <option value="environment">environment</option>
+                <option value="health">health</option>
+                <option value="infrastructure">infrastructure</option>
+                <option value="labor">labor</option>
+                <option value="legislature">legislature</option>
+                <option value="public safety">public safety</option>
+                <option value="science">science</option>
+                <option value="sports">sports</option>
+                <option value="weather">weather</option>
+
+            </select>
+            <label>Categories</label>
         </div>
 
-        <div class="input-field col s12">   
+        <div class="input-field col s12">
             <input type="text" name="description" id="description" class="validate" placeholder="Description">
             <label for="description">Description</label>
-        </div> 
+        </div>
 
         <div class="input-field col s12">
             <input type="file" name="upload" class="validate">
-        </div>     
+        </div>
 
-        <div class="input-field col s12">    
+        <div class="input-field col s12">
             <input type="submit" value="Submit" class="btn waves-effect waves-light">
-        </div> 
+        </div>
 
     </form>
 
 </div>
 
 
-       {{!-- <div class="input-field col s12">
-            <input placeholder="Document source" id="source" type="text" class="validate">
-            <label for="source">Source</label>
-        </div>
-        <div class="input-field col s12">
-            <input placeholder="Document title" id="title" type="text" class="validate">
-            <label for="title">Title</label>
-        </div>
-        <div class="input-field col s12">
-            <input type="date" id="date" name="doc-date" value="01-01-1999" min="1600-01-01" max="2999-01-01">
-            <label for="date">Date file was created:</label>
-        </div>
+{{!-- <div class="input-field col s12">
+    <input placeholder="Document source" id="source" type="text" class="validate">
+    <label for="source">Source</label>
+</div>
+<div class="input-field col s12">
+    <input placeholder="Document title" id="title" type="text" class="validate">
+    <label for="title">Title</label>
+</div>
+<div class="input-field col s12">
+    <input type="date" id="date" name="doc-date" value="01-01-1999" min="1600-01-01" max="2999-01-01">
+    <label for="date">Date file was created:</label>
+</div>
 
-        <div class="input-field col s12">
-            <input placeholder="Category" id="category" type="text" class="validate">
-            <label for="category">Category</label>
-        </div>
+<div class="input-field col s12">
+    <input placeholder="Category" id="category" type="text" class="validate">
+    <label for="category">Category</label>
+</div>
 
-        <div class="input-field col s12">
-            <input placeholder="Description" id="description" type="text" class="validate">
-            <label for="description">Description</label>
-        </div>
+<div class="input-field col s12">
+    <input placeholder="Description" id="description" type="text" class="validate">
+    <label for="description">Description</label>
+</div>
 
-        <div class="input-field col s12">
-          <select multiple>
-              <option value="" disabled selected>Choose your option</option>
-              <option value="1">Arts</option>
-              <option value="2">Health</option>
-              <option value="3">Infrastructure</option>
-              <option value="4">Labor</option>
-              <option value="5">Legislature</option>
-              <option value="6">Science</option>
-              <option value="7">Sports</option>
+<div class="input-field col s12">
+    <select multiple>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Arts</option>
+        <option value="2">Health</option>
+        <option value="3">Infrastructure</option>
+        <option value="4">Labor</option>
+        <option value="5">Legislature</option>
+        <option value="6">Science</option>
+        <option value="7">Sports</option>
 
-          </select>
-          <label>Category</label>
-        </div>
+    </select>
+    <label>Category</label>
+</div>
 
-        <div class="input-field col s12">
-            <form ref="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
-                <!-- Creating the input field with the name "sampleFile", the "sampleFile" must match the section in your Express.js route, so long as they match you can call it whatever you want -->
-                <input type="file" name="sampleFile" />
-                <!-- Creating submit button to actually submit the form to the backend -->
-                <input type="submit" value="Upload!" />
-            </form>
-        </div>
+<div class="input-field col s12">
+    <form ref="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+        <!-- Creating the input field with the name "sampleFile", the "sampleFile" must match the section in your Express.js route, so long as they match you can call it whatever you want -->
+        <input type="file" name="sampleFile" />
+        <!-- Creating submit button to actually submit the form to the backend -->
+        <input type="submit" value="Upload!" />
+    </form>
+</div>
 
-        <div class="col s12">
-            <button class="formSubmit btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
-        </div> --}}
+<div class="col s12">
+    <button class="formSubmit btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+    </button>
+</div> --}}
