@@ -52,7 +52,7 @@ app.use(fileUpload());
         source: req.body.source,
         document_name: req.body.title,
         docdate: req.body.docdate,
-        category: req.body.category,
+        category: req.body.category.toString(),
         description: req.body.description,
         image: baseAWSURL + uploadData.Key // We know that they key will be the end of the url
 
