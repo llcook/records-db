@@ -34,9 +34,11 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1,500]
             }
-        },
+        }
+        ,
         image: {
-            type: DataTypes.BLOB
+            type: DataTypes.STRING,
+            allowNull: true
         }
 
     });
