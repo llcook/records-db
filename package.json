@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/llcook/records-db#readme",
   "dependencies": {
-    "aws-sdk": "^2.387.0",
+    "aws-sdk": "^2.814.0",
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
